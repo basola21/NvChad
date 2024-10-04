@@ -12,10 +12,11 @@ M.mason = {
     "isort",
     "ruff-lsp",
     "pyright",
+    "gopls",
   },
 }
 M.base46 = {
-  theme = "gatekeeper",
+  theme = "everforest",
 
   hl_override = {
     Comment = { italic = true },
