@@ -22,7 +22,7 @@ return {
   {
     "mfussenegger/nvim-dap",
     config = function()
-      require "configs.dap"
+      require "configs.dapconfig"
     end,
   },
   {
@@ -51,7 +51,12 @@ return {
     end,
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
+      {
+        "rcarriga/nvim-notify",
+        config = function ()
+          require("configs.notifyconfig")
+        end
+      },
     },
   },
   {
