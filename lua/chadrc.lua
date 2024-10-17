@@ -13,15 +13,29 @@ M.mason = {
     "ruff-lsp",
     "pyright",
     "typescript-language-server",
-    "gopls"
+    "gopls",
   },
 }
+
 M.base46 = {
   theme = "everforest",
 
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
+  },
+}
+
+M.ui = {
+  statusline = {
+    enabled = true,
+    theme = "default", -- default/vscode/vscode_colored/minimal
+    separator_style = "default",
+    order = { "mode", "file", "git", "space", "obsession", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
+    modules = {
+      obsession = "%{ObsessionStatus('', '')}",
+      space = " ",
+    },
   },
 }
 

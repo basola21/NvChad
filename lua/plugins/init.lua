@@ -1,4 +1,5 @@
 return {
+  { "tpope/vim-obsession", lazy = false },
   {
     "rcarriga/nvim-dap-ui",
     config = function()
@@ -31,9 +32,6 @@ return {
   {
     "kristijanhusak/vim-dadbod-ui",
     lazy = false,
-    dependencies = {
-      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql", "sqlite" }, lazy = false },
-    },
   },
   {
     "tpope/vim-dadbod",
