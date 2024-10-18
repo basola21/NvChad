@@ -2,7 +2,7 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-map("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
+map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
 map("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", { desc = "Preview Git hunk" })
 map("n", "<leader>gs", ":Gitsigns stage_hunk<CR>", { desc = "Stage Git hunk" })
 map("n", "<leader>gu", ":Gitsigns undo_stage_hunk<CR>", { desc = "Undo stage Git hunk" })
