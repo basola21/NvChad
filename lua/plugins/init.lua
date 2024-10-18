@@ -1,4 +1,18 @@
 return {
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
   { "tpope/vim-obsession", lazy = false },
   {
     "rcarriga/nvim-dap-ui",
@@ -53,9 +67,9 @@ return {
       "MunifTanjim/nui.nvim",
       {
         "rcarriga/nvim-notify",
-        config = function ()
-          require("configs.notifyconfig")
-        end
+        config = function()
+          require "configs.notifyconfig"
+        end,
       },
     },
   },
