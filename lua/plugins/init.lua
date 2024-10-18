@@ -1,5 +1,7 @@
 return {
 
+  --change
+  { "sindrets/diffview.nvim", lazy = false },
   {
     "kdheepak/lazygit.nvim",
     lazy = true,
