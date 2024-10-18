@@ -1,4 +1,5 @@
 return {
+
   {
     "kdheepak/lazygit.nvim",
     lazy = true,
@@ -12,6 +13,9 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    config = function()
+      require("telescope").load_extension "lazygit"
+    end,
   },
   { "tpope/vim-obsession", lazy = false },
   {
