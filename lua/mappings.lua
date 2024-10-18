@@ -18,7 +18,6 @@ map("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>")
 map("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>")
 map("n", "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 
-map("n", "<leader>nd", "<cmd>NoiceDismiss<cr>")
 map("n", "<leader>tt", require("custom").toggle_transparency)
 map("n", "<leader>nd", "<cmd>NoiceDismiss<cr>")
 map("n", ";", ":", { desc = "CMD enter command mode" })
