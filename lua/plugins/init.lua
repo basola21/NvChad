@@ -1,6 +1,4 @@
 return {
-
-  --change
   { "sindrets/diffview.nvim", lazy = false },
   {
     "kdheepak/lazygit.nvim",
@@ -22,27 +20,36 @@ return {
   { "tpope/vim-obsession", lazy = false },
   {
     "rcarriga/nvim-dap-ui",
+    dependencies = "mfussenegger/nvim-dap",
     config = function()
-      local dap, dapui = require "dap", require "dapui"
-      dap.listeners.before.attach.dapui_config = function()
+      local dap = require "dap"
+      local dapui = require "dapui"
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
       end
-      dap.listeners.before.launch.dapui_config = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated.dapui_config = function()
+      dap.listeners.before.event_terminated["dapui_config"] = function()
         dapui.close()
       end
-      dap.listeners.before.event_exited.dapui_config = function()
+      dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
     end,
-    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
   },
   {
     "mfussenegger/nvim-dap",
-    config = function()
-      require "configs.dapconfig"
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      --"mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
+    },
+    config = function(_, opts)
+      local path = os.getenv "HOME" .. "/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
     end,
   },
   {

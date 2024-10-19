@@ -1,7 +1,7 @@
 local dap = require "dap"
 dap.adapters.python = {
   type = "executable",
-  command = "/Users/basel/.virtualenvs/debugpy/bin/python",
+  command = "/home/basel/.local/share/nvim/mason/packages/debugpy/venv/bin/python",
   args = { "-m", "debugpy.adapter" },
 }
 
