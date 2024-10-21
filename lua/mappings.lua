@@ -6,6 +6,7 @@ local map = vim.keymap.set
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "toggle breakpoint" })
 map("n", "<leader>dd", "<cmd>:lua require('dap').continue()<CR>", { desc = "start debugger" })
 map("n", "<leader>di", "<cmd>:lua require('dapui').eval()<CR>", { desc = "inspect value in debugger" })
+map("n", "<leader>dc", "<cmd>:lua require('dap').step_into()<CR>", { desc = "inspect value in debugger" })
 
 --git keys
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })

@@ -1,4 +1,8 @@
 return {
+  {
+  "folke/twilight.nvim",
+    ft = "python"
+  },
   { "sindrets/diffview.nvim", lazy = false },
   {
     "kdheepak/lazygit.nvim",
