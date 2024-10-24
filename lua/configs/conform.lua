@@ -1,11 +1,18 @@
 local options = {
   formatters_by_ft = {
-    lua = { "stylua" },
+    lua = {
+      formatters = "stylua",
+    },
+
     css = { "prettier" },
     html = { "prettier" },
-    python = { "black", "isort" },
+
+    python = {
+      formatters = { "black", "isort" },
+    },
     go = { "gofumpt", "goimports_reviser", "golines" },
   },
+
   --
   -- format_on_save = {
   --   -- These options will be passed to conform.format()
@@ -14,6 +21,7 @@ local options = {
   -- },
   formatters = {
     black = {
+
       prepend_args = { "--fast" },
     },
   },

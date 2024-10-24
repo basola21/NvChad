@@ -24,6 +24,27 @@ M.base46 = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
   },
+
+}
+
+M.nvdash = {
+  load_on_startup = true,
+  header = {
+
+    "          ;)( ;             ",
+    "         :----:             ",
+    "        C|====|             ",
+    "         |    |             ",
+    "         `----'             ",
+    "                            ",
+    "    Proceed with Caution!  ",
+    "     Breakage is likely!   ",
+    "                            ",
+    "       Powered By Basel    ",
+    "                            ",
+  }
+
+
 }
 
 M.ui = {

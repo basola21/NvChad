@@ -37,11 +37,11 @@ map("n", "<leader>nd", "<cmd>NoiceDismiss<cr>")
 --quit all
 map("n", "<leader>qq", "<cmd>qa<CR>", { desc = "quit all and exit" })
 
-
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
-
-map("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
-map("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
-map("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
+map("n", "=", [[<cmd>vertical resize +5<cr>]])     -- make the window biger vertically
+map("n", "-", [[<cmd>vertical resize -5<cr>]])     -- make the window smaller vertically
+map("n", "+", [[<cmd>horizontal resize +2<cr>]])   -- make the window bigger horizontally by pressing shift and =
 map("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
+
+map("v", "fm", require("custom").format_selected, { desc = "format selected range" })

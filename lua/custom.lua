@@ -1,8 +1,18 @@
 -- Directory where all session folders will be stored
 local session_base_dir = vim.fn.expand "~/sessions/" -- Change this to your preferred base directory
-
 local M = {}
 
+M.format_selected = function()
+  local start_pos = vim.fn.getpos("'<")
+  local end_pos = vim.fn.getpos("'>")
+  require("conform").format({
+    lsp_fallback = true,
+    range = {
+      ["start"] = { start_pos[2], start_pos[3] - 1 },
+      ["end"] = { end_pos[2], end_pos[3] - 1 },
+    },
+  })
+end
 -- Function to toggle Obsession and save session files inside a folder
 M.toggle_obsession = function()
   -- Check if Obsession is currently active
@@ -32,8 +42,8 @@ M.toggle_obsession = function()
   end
 end
 
-M.toggle_transparency = function ()
+M.toggle_transparency = function()
   require("base46").toggle_transparency()
-  end
+end
 
 return M
