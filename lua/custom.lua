@@ -42,11 +42,7 @@ M.toggle_obsession = function()
   end
 end
 
--- Function to load the saved Obsession session file for the current directory
 M.load_obsession_session = function()
-  -- Ensure the session_base_dir is defined
-  local session_base_dir = session_base_dir or vim.fn.stdpath('data') .. '/sessions/'
-
   -- Get the current working directory name to use as a session folder name
   local session_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
   local session_dir = session_base_dir .. session_name
