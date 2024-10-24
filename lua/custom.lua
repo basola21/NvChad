@@ -42,6 +42,26 @@ M.toggle_obsession = function()
   end
 end
 
+-- Function to load the saved Obsession session file for the current directory
+M.load_obsession_session = function()
+  -- Ensure the session_base_dir is defined
+  local session_base_dir = session_base_dir or vim.fn.stdpath('data') .. '/sessions/'
+
+  -- Get the current working directory name to use as a session folder name
+  local session_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+  local session_dir = session_base_dir .. session_name
+  local session_file = session_dir .. "/session.vim"
+
+  -- Check if the session file exists
+  if vim.fn.filereadable(session_file) == 1 then
+    -- Source the session file (load the session)
+    vim.cmd("source " .. vim.fn.fnameescape(session_file))
+    print("Session loaded from " .. session_file)
+  else
+    print("No session file found for the current directory.")
+  end
+end
+
 M.toggle_transparency = function()
   require("base46").toggle_transparency()
 end

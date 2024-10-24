@@ -20,6 +20,7 @@ map("n", "<leader>gp", ":Gitsigns prev_hunk<CR>", { desc = "Previous Git hunk" }
 
 --Obsession keys
 map("n", "<leader>so", require("custom").toggle_obsession, { desc = "Toggle Obsession with session directory" })
+map("n", "<leader>sl", require("custom").load_obsession_session, { desc = "Load Obsession session" })
 
 --tmux navigation maps
 map("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
