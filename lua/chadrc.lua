@@ -18,7 +18,7 @@ M.mason = {
 }
 
 M.base46 = {
-  theme = "everforest",
+  theme = "rxyhn",
 
   hl_override = {
     Comment = { italic = true },
