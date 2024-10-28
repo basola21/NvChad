@@ -1,7 +1,32 @@
 return {
+{
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ft = {"markdown"}
+},
   {
-  "folke/twilight.nvim",
-    ft = "python"
+    "epwalsh/obsidian.nvim",
+    version = "*", -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "personal",
+          path = "~/Documents/Life/",
+        },
+      },
+      -- ui = {
+      --   enable = false
+      -- },
+    },
+  },
+  {
+    "folke/twilight.nvim",
+    ft = { "python", "markdown" },
   },
   { "sindrets/diffview.nvim", lazy = false },
   {
@@ -21,7 +46,7 @@ return {
       require("telescope").load_extension "lazygit"
     end,
   },
-  { "tpope/vim-obsession", lazy = false },
+  { "tpope/vim-obsession",    lazy = false },
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",

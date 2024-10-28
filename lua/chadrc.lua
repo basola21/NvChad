@@ -18,7 +18,7 @@ M.mason = {
 }
 
 M.base46 = {
-  theme = "rxyhn",
+  theme = "ayu_dark",
 
   hl_override = {
     Comment = { italic = true },
@@ -49,7 +49,7 @@ M.nvdash = {
       { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
       { txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },
       { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
-      { txt = "󰒭  Load Session", keys = "<leader>sl", cmd = ":lua require('custom').load_obsession_session()" },
+      { txt = "󰒭  Load Session", keys = "sl", cmd = ":lua require('custom').load_obsession_session()" },
       { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
   }
 
