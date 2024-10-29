@@ -1,23 +1,44 @@
 return {
-{
+  {
+    "basola21/PDFview",
+    lazy = false,
+    branch = "dev",
+    dependencies = { "nvim-telescope/telescope.nvim" }
+  },
+  {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ft = {"markdown"}
-},
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    ft = { "markdown" }
+  },
   {
     "epwalsh/obsidian.nvim",
-    version = "*", -- recommended, use latest release instead of latest commit
+    version = "*",
     lazy = true,
     ft = "markdown",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
     opts = {
+      completion = {
+        nvim_cmp = true,
+        min_chars = 2,
+      },
       workspaces = {
         {
           name = "personal",
           path = "~/Documents/Life/",
         },
+      },
+      notes_subdir = "1 - Rough Notes",
+      daily_notes = {
+        folder = "7 - Daily Notes",
+        date_format = "%Y/%m-%B/%Y-%m-%d-%A",
+        alias_format = "%B %-d, %Y",
+        template = "Daily Note.md"
+      },
+      templates = {
+        folder = "5 - Template",
       },
       -- ui = {
       --   enable = false
