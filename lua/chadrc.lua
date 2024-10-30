@@ -18,7 +18,7 @@ M.mason = {
 }
 
 M.base46 = {
-  theme = "ayu_dark",
+  theme = "catppuccin",
 
   hl_override = {
     Comment = { italic = true },

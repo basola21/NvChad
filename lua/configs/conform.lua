@@ -1,15 +1,9 @@
 local options = {
   formatters_by_ft = {
-    lua = {
-      formatters = "stylua",
-    },
-
+    lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
-
-    python = {
-      formatters = { "black", "isort" },
-    },
+    python = { "black", "isort" },
     go = { "gofumpt", "goimports_reviser", "golines" },
   },
 
@@ -21,7 +15,6 @@ local options = {
   -- },
   formatters = {
     black = {
-
       prepend_args = { "--fast" },
     },
   },
