@@ -27,7 +27,7 @@ return {
       workspaces = {
         {
           name = "personal",
-          path = "~/Documents/Life/",
+          path = "~/Documents/basel's vault/",
         },
       },
       notes_subdir = "1 - Rough Notes",
