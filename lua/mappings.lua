@@ -49,7 +49,7 @@ map("v", "fm", require("custom").format_selected, { desc = "format selected rang
 
 -- obsidian
 map("n","<leader>od",":ObsidianToday<CR>",{desc = "create today note"})
-map("n","<leader>on",":ObsidianLinkNew<CR>",{desc = "create new link"})
+map("v","<leader>on",":ObsidianLinkNew<CR>",{desc = "create new link"})
 map("n","<leader>of",":ObsidianFollowLink<CR>",{desc = "obsidian follow link"})
 
 -- pdfview
