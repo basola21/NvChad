@@ -48,7 +48,9 @@ map("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller hori
 map("v", "fm", require("custom").format_selected, { desc = "format selected range" })
 
 -- obsidian
-map("n","<leader>dn",":ObsidianToday<CR>",{desc = "create today note"})
+map("n","<leader>od",":ObsidianToday<CR>",{desc = "create today note"})
+map("n","<leader>on",":ObsidianLinkNew<CR>",{desc = "create new link"})
+map("n","<leader>of",":ObsidianFollowLink<CR>",{desc = "obsidian follow link"})
 
 -- pdfview
 map("n", "<leader>jj", "<cmd>:lua require('pdfview.renderer').next_page()<CR>", { desc = "pdfview next page" })
