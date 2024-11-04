@@ -21,6 +21,7 @@ map("n", "<leader>gp", ":Gitsigns prev_hunk<CR>", { desc = "Previous Git hunk" }
 --Obsession keys
 map("n", "<leader>so", require("custom").toggle_obsession, { desc = "Toggle Obsession with session directory" })
 map("n", "<leader>sl", require("custom").load_obsession_session, { desc = "Load Obsession session" })
+map("n", "<leader>sd", require("custom").delete_obsession_session, { desc = "Load Obsession session" })
 
 --tmux navigation maps
 map("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
@@ -40,17 +41,18 @@ map("n", "<leader>qq", "<cmd>qa<CR>", { desc = "quit all and exit" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
-map("n", "=", [[<cmd>vertical resize +5<cr>]])   -- make the window biger vertically
-map("n", "-", [[<cmd>vertical resize -5<cr>]])   -- make the window smaller vertically
+map("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+map("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
 map("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
 map("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
 
 map("v", "fm", require("custom").format_selected, { desc = "format selected range" })
 
 -- obsidian
-map("n","<leader>od",":ObsidianToday<CR>",{desc = "create today note"})
-map("v","<leader>on",":ObsidianLinkNew<CR>",{desc = "create new link"})
-map("n","<leader>of",":ObsidianFollowLink<CR>",{desc = "obsidian follow link"})
+map("n", "<leader>od", ":ObsidianToday<CR>", { desc = "create today note" })
+map("v", "<leader>on", ":ObsidianLinkNew<CR>", { desc = "create new link" })
+map("n", "<leader>of", ":ObsidianFollowLink<CR>", { desc = "obsidian follow link" })
+map("n", "<leader>on", ":ObsidianNew<CR>", { desc = "obsidian create new note" })
 
 -- pdfview
 map("n", "<leader>jj", "<cmd>:lua require('pdfview.renderer').next_page()<CR>", { desc = "pdfview next page" })

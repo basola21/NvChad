@@ -1,4 +1,5 @@
 return {
+  {"https://github.com/github/copilot.vim.git"},
   {
     "basola21/PDFview",
     lazy = false,

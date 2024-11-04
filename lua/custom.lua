@@ -3,15 +3,15 @@ local session_base_dir = vim.fn.expand "~/sessions/" -- Change this to your pref
 local M = {}
 
 M.format_selected = function()
-  local start_pos = vim.fn.getpos("'<")
-  local end_pos = vim.fn.getpos("'>")
-  require("conform").format({
+  local start_pos = vim.fn.getpos "'<"
+  local end_pos = vim.fn.getpos "'>"
+  require("conform").format {
     lsp_fallback = true,
     range = {
       ["start"] = { start_pos[2], start_pos[3] - 1 },
       ["end"] = { end_pos[2], end_pos[3] - 1 },
     },
-  })
+  }
 end
 -- Function to toggle Obsession and save session files inside a folder
 M.toggle_obsession = function()
@@ -54,7 +54,22 @@ M.load_obsession_session = function()
     vim.cmd("source " .. vim.fn.fnameescape(session_file))
     print("Session loaded from " .. session_file)
   else
-    print("No session file found for the current directory.")
+    print "No session file found for the current directory."
+  end
+end
+M.delete_obsession_session = function()
+  -- Get the current working directory name to use as a session folder name
+  local session_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+  local session_dir = session_base_dir .. session_name
+  local session_file = session_dir .. "/session.vim"
+
+  -- Check if the session file exists
+  if vim.fn.filereadable(session_file) == 1 then
+    -- Source the session file (load the session)
+    vim.cmd("rm " .. vim.fn.fnameescape(session_file))
+    print("Session deleted from " .. session_file)
+  else
+    print "No session file found for the current directory."
   end
 end
 
