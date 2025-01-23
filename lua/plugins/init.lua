@@ -1,9 +1,7 @@
 return {
   {
-    "basola21/PDFview",
+    "github/copilot.vim",
     lazy = false,
-    branch = "dev",
-    dependencies = { "nvim-telescope/telescope.nvim" }
   },
   {
     "stevearc/vim-arduino",
@@ -11,9 +9,15 @@ return {
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
+    "basola21/PDFview",
+    branch = "dev",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+  },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    ft = { "markdown" }
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+    ft = { "markdown" },
   },
   {
     "epwalsh/obsidian.nvim",
@@ -31,7 +35,7 @@ return {
       workspaces = {
         {
           name = "personal",
-          path = "~/Documents/basel's vault/",
+          path = "~/Documents/Life/",
         },
       },
       notes_subdir = "1 - Rough Notes",
@@ -39,7 +43,7 @@ return {
         folder = "7 - Daily Notes",
         date_format = "%Y/%m-%B/%Y-%m-%d-%A",
         alias_format = "%B %-d, %Y",
-        template = "Daily Note.md"
+        template = "Daily Note.md",
       },
       templates = {
         folder = "5 - Template",
@@ -71,7 +75,7 @@ return {
       require("telescope").load_extension "lazygit"
     end,
   },
-  { "tpope/vim-obsession",    lazy = false },
+  { "tpope/vim-obsession", lazy = false },
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
@@ -164,7 +168,19 @@ return {
       require "configs.null-ls"
     end,
   },
-
+  {
+    "windwp/nvim-ts-autotag",
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    config = function()
+      require("nvim-ts-autotag").setup {
+        opts = {
+          enable_close = true,
+          enable_rename = true,
+          enable_close_on_slash = false,
+        },
+      }
+    end,
+  },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -177,6 +193,10 @@ return {
         "vimdoc",
         "html",
         "css",
+        "javascript",
+        "typescript",
+        "python",
+        "go",
       },
     },
   },

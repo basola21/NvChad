@@ -3,7 +3,12 @@ local options = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
+    javascript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescript = { "prettier" },
+    typescriptreact = { "prettier" },
     python = { "black", "isort" },
+    sql = { "sql-language-server" },
     go = { "gofumpt", "goimports_reviser", "golines" },
     arduino = { "clang-format" },
     sql = {"sql_formatter`"},
@@ -18,6 +23,7 @@ local options = {
   formatters = {
     black = {
       prepend_args = { "--fast" },
+      timeout_ms = 6000,
     },
   },
 }
