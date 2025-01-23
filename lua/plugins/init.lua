@@ -5,10 +5,9 @@ return {
   },
   {
     "stevearc/vim-arduino",
-    ft = {"arduino"}
+    ft = { "arduino" }
   },
   {
-    'MeanderingProgrammer/render-markdown.nvim',
     "basola21/PDFview",
     branch = "dev",
     dependencies = { "nvim-telescope/telescope.nvim" },
@@ -75,7 +74,7 @@ return {
       require("telescope").load_extension "lazygit"
     end,
   },
-  { "tpope/vim-obsession", lazy = false },
+  { "tpope/vim-obsession",    lazy = false },
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
