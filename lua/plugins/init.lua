@@ -6,6 +6,10 @@ return {
     dependencies = { "nvim-telescope/telescope.nvim" }
   },
   {
+    "stevearc/vim-arduino",
+    ft = {"arduino"}
+  },
+  {
     'MeanderingProgrammer/render-markdown.nvim',
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
@@ -165,6 +169,9 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "python",
+        "typescript",
+        "javascript",
         "vim",
         "lua",
         "vimdoc",

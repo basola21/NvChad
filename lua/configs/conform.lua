@@ -5,6 +5,8 @@ local options = {
     html = { "prettier" },
     python = { "black", "isort" },
     go = { "gofumpt", "goimports_reviser", "golines" },
+    arduino = { "clang-format" },
+    sql = {"sql_formatter`"},
   },
 
   --

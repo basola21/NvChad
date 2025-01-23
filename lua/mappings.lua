@@ -55,3 +55,12 @@ map("n","<leader>of",":ObsidianFollowLink<CR>",{desc = "obsidian follow link"})
 -- pdfview
 map("n", "<leader>jj", "<cmd>:lua require('pdfview.renderer').next_page()<CR>", { desc = "pdfview next page" })
 map("n", "<leader>kk", "<cmd>:lua require('pdfview.renderer').previous_page()<CR>", { desc = "pdfview previous page" })
+
+-- Arduino keys
+map("n", "<leader>aa", "<cmd>ArduinoAttach<CR>", { desc = "Attach to Arduino" })
+map("n", "<leader>av", "<cmd>ArduinoVerify<CR>", { desc = "Verify Arduino code" })
+map("n", "<leader>au", "<cmd>ArduinoUpload<CR>", { desc = "Upload to Arduino" })
+map("n", "<leader>aus", "<cmd>ArduinoUploadAndSerial<CR>", { desc = "Upload and open Serial Monitor" })
+map("n", "<leader>as", "<cmd>ArduinoSerial<CR>", { desc = "Open Arduino Serial Monitor" })
+map("n", "<leader>ab", "<cmd>ArduinoChooseBoard<CR>", { desc = "Choose Arduino Board" })
+map("n", "<leader>ap", "<cmd>ArduinoChooseProgrammer<CR>", { desc = "Choose Arduino Programmer" })

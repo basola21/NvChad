@@ -14,6 +14,7 @@ M.mason = {
     "pyright",
     "typescript-language-server",
     "gopls",
+    "arduino-language-server"
   },
 }
 
