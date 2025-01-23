@@ -3,12 +3,12 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
--- EXAMPLE
-local servers = { "html", "cssls" }
+local servers = { "html", "cssls", "ts_ls", "tailwindcss", "eslint" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 local util = require "lspconfig/util"
 -- lsps with default config
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = nvlsp.on_attach,
@@ -22,6 +22,13 @@ lspconfig.pyright.setup {
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
   filetypes = { "python" },
+}
+
+lspconfig.postgres_lsp.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  filetypes = { "sql" },
 }
 
 lspconfig.gopls.setup {

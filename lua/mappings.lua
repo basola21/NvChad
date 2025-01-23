@@ -39,6 +39,9 @@ map("n", "<leader>nd", "<cmd>NoiceDismiss<cr>")
 --quit all
 map("n", "<leader>qq", "<cmd>qa<CR>", { desc = "quit all and exit" })
 
+--replace all
+map("n", "<leader>rr", ":%s/\\<<C-r><C-w>\\>//g<left><left>", { desc = "replace an occurrence of a word in a file" })
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 map("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
@@ -57,3 +60,5 @@ map("n", "<leader>on", ":ObsidianNew<CR>", { desc = "obsidian create new note" }
 -- pdfview
 map("n", "<leader>jj", "<cmd>:lua require('pdfview.renderer').next_page()<CR>", { desc = "pdfview next page" })
 map("n", "<leader>kk", "<cmd>:lua require('pdfview.renderer').previous_page()<CR>", { desc = "pdfview previous page" })
+
+map("i", "<C-J>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })

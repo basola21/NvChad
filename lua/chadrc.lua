@@ -12,7 +12,11 @@ M.mason = {
     "isort",
     "ruff-lsp",
     "pyright",
+    "eslint-lsp",
+    "html-lsp",
+    "css-lsp",
     "typescript-language-server",
+    "tailwindcss-language-server",
     "gopls",
   },
 }
@@ -24,7 +28,6 @@ M.base46 = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
   },
-
 }
 
 M.nvdash = {
@@ -43,16 +46,15 @@ M.nvdash = {
     "       Powered By Basel    ",
     "                            ",
   },
-  buttons ={
-      { txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },
-      { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
-      { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
-      { txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },
-      { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
-      { txt = "󰒭  Load Session", keys = "sl", cmd = ":lua require('custom').load_obsession_session()" },
-      { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
-  }
-
+  buttons = {
+    { txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },
+    { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles" },
+    { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
+    { txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },
+    { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
+    { txt = "󰒭  Load Session", keys = "sl", cmd = ":lua require('custom').load_obsession_session()" },
+    { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
+  },
 }
 
 M.ui = {
@@ -60,7 +62,20 @@ M.ui = {
     enabled = true,
     theme = "default", -- default/vscode/vscode_colored/minimal
     separator_style = "default",
-    order = { "mode", "file", "git", "space", "obsession", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
+    order = {
+      "mode",
+      "file",
+      "git",
+      "space",
+      "obsession",
+      "%=",
+      "lsp_msg",
+      "%=",
+      "diagnostics",
+      "lsp",
+      "cwd",
+      "cursor",
+    },
     modules = {
       obsession = "%{ObsessionStatus('', '')}",
       space = " ",
