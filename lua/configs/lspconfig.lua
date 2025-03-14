@@ -17,7 +17,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.pyright.setup {
+lspconfig.ruff.setup {
   on_attach = nvlsp.on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
@@ -29,11 +29,14 @@ lspconfig.arduino_language_server.setup {
   capabilities = nvlsp.capabilities,
   filetypes = { "arduino" },
   cmd = {
-    "/sbin/arduino-language-server",                          -- Path to arduino-language-server (update this if installed elsewhere)
-    "-cli", "/sbin/arduino-cli",                              -- Path to arduino-cli
-    "-cli-config", "/home/basel/.arduino15/arduino-cli.yaml", -- Path to arduino-cli.yaml
-    "-clangd", "/sbin/clangd"                                 -- Path to clangd
-  }
+    "/sbin/arduino-language-server", -- Path to arduino-language-server (update this if installed elsewhere)
+    "-cli",
+    "/sbin/arduino-cli", -- Path to arduino-cli
+    "-cli-config",
+    "/home/basel/.arduino15/arduino-cli.yaml", -- Path to arduino-cli.yaml
+    "-clangd",
+    "/sbin/clangd", -- Path to clangd
+  },
 }
 
 lspconfig.postgres_lsp.setup {

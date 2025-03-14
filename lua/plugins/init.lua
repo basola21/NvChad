@@ -1,4 +1,5 @@
 return {
+  { "folke/flash.nvim", event = "VeryLazy" },
   {
     "nvzone/typr",
     dependencies = "nvzone/volt",
@@ -10,7 +11,7 @@ return {
   },
   {
     "stevearc/vim-arduino",
-    ft = { "arduino" }
+    ft = { "arduino" },
   },
   {
     "basola21/PDFview",
@@ -79,7 +80,7 @@ return {
       require("telescope").load_extension "lazygit"
     end,
   },
-  { "tpope/vim-obsession",    lazy = false },
+  { "tpope/vim-obsession", lazy = false },
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
