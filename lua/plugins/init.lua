@@ -1,5 +1,10 @@
 return {
   {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    lazy = false,
+  },
+  {
     "github/copilot.vim",
     lazy = false,
   },

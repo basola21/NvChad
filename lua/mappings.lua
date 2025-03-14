@@ -44,8 +44,8 @@ map("n", "<leader>rr", ":%s/\\<<C-r><C-w>\\>//g<left><left>", { desc = "replace 
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
-map("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
-map("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+map("n", "=", [[<cmd>vertical resize +5<cr>]])   -- make the window biger vertically
+map("n", "-", [[<cmd>vertical resize -5<cr>]])   -- make the window smaller vertically
 map("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
 map("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
 
@@ -69,4 +69,9 @@ map("n", "<leader>aus", "<cmd>ArduinoUploadAndSerial<CR>", { desc = "Upload and 
 map("n", "<leader>as", "<cmd>ArduinoSerial<CR>", { desc = "Open Arduino Serial Monitor" })
 map("n", "<leader>ab", "<cmd>ArduinoChooseBoard<CR>", { desc = "Choose Arduino Board" })
 map("n", "<leader>ap", "<cmd>ArduinoChooseProgrammer<CR>", { desc = "Choose Arduino Programmer" })
-map("i", "<C-J>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
+
+-- copilot
+map("i", "<C-J>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false ,desc = "copilot autocomplete" })
+
+--DBUI keys
+map("n", "<C-d>", ":DBUIToggle<CR>", {desc="DBUI Toggle"})
