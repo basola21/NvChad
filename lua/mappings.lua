@@ -75,8 +75,6 @@ map("i", "<C-J>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = 
 
 --DBUI keys
 map("n", "<C-d>", ":DBUIToggle<CR>", {desc="DBUI Toggle"})
--- copilot mappings
-map("i", "<C-J>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
 
 -- Flash.nvim mappings
 map({ "n", "x", "o" }, "s", function() require("flash").jump() end, { desc = "Flash" })
