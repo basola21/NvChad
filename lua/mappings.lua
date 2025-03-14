@@ -69,4 +69,16 @@ map("n", "<leader>aus", "<cmd>ArduinoUploadAndSerial<CR>", { desc = "Upload and 
 map("n", "<leader>as", "<cmd>ArduinoSerial<CR>", { desc = "Open Arduino Serial Monitor" })
 map("n", "<leader>ab", "<cmd>ArduinoChooseBoard<CR>", { desc = "Choose Arduino Board" })
 map("n", "<leader>ap", "<cmd>ArduinoChooseProgrammer<CR>", { desc = "Choose Arduino Programmer" })
+
+-- copilot mappings
 map("i", "<C-J>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
+
+-- Flash.nvim mappings
+map({ "n", "x", "o" }, "s", function() require("flash").jump() end, { desc = "Flash" })
+map({ "n", "x", "o" }, "S", function() require("flash").treesitter() end, { desc = "Flash Treesitter" })
+map("o", "r", function() require("flash").remote() end, { desc = "Remote Flash" })
+map({ "o", "x" }, "R", function() require("flash").treesitter_search() end, { desc = "Treesitter Search" })
+map("c", "<C-R>", function() require("flash").toggle() end, { desc = "Toggle Flash Search" })
+
+-- lsp mappings
+map("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float(0, { scope = 'line' })<CR>", { desc = "Line Diagnostics" })
